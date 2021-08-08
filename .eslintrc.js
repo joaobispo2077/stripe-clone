@@ -11,23 +11,23 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
+    'plugin:import/errors',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
-    sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'import'],
   settings: {
     react: {
       version: 'detect',
     },
   },
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'import/no-anonymous-default-export': 'off',
+    'react/prop-types': 'off',
   },
 };
