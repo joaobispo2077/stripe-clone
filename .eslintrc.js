@@ -11,7 +11,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
-    'plugin:import/errors',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -21,7 +20,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: ['react', '@typescript-eslint'],
   settings: {
     react: {
       version: 'detect',
