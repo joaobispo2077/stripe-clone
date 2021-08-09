@@ -20,13 +20,14 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   settings: {
     react: {
       version: 'detect',
     },
   },
   rules: {
+    'prettier/prettier': 'error',
     'react/prop-types': 'off',
   },
 };
