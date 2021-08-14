@@ -1,23 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { DropdownContext } from './Provider';
 import { DropdownSection } from './Section';
 
 const DropdownRoot: React.FC = () => {
-  const { options } = useContext(DropdownContext);
+  const { options, cachedId, getOptionById } = useContext(DropdownContext);
+
+  const cachedOption = useMemo(
+    () => getOptionById(cachedId),
+    [cachedId, getOptionById],
+  );
+
+  let [x, width, height] = [0, 0, 0];
+
+  if (cachedOption) {
+    const { optionCenterX, contentDimensions } = cachedOption;
+
+    width = contentDimensions?.width;
+    height = contentDimensions?.height;
+    x = optionCenterX - width / 2;
+  }
 
   return (
     <div className="dropdown-root">
-      <div>
-        <div className="dropdown-container">
+      <motion.div
+        className="dropdown-container"
+        animate={{
+          x,
+          width,
+          height,
+        }}
+      >
+        <motion.div
+          animate={{
+            x: -x,
+          }}
+        >
           {options.map((dropDownElement) => (
             <DropdownSection
               key={dropDownElement.id}
               option={dropDownElement}
             />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
