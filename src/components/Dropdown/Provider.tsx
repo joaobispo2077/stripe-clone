@@ -14,19 +14,21 @@ export type OptionsControll = {
   setCachedId: React.Dispatch<React.SetStateAction<targetProp>>;
 };
 
-export const DropdownContext = React.createContext<OptionsControll | null>(
-  null,
+export const DropdownContext = React.createContext<OptionsControll>(
+  {} as OptionsControll,
 );
 
 export type OptionsShape = {
   id: targetProp;
   optionDimensions: number;
   optionCenterX: number;
-  WrappedContent: React.ReactNode;
+  WrappedContent: React.ReactElement;
   backgroundHeight: number;
 };
 
-export const DropdownProvider: React.FC = (children: React.ReactNode) => {
+export const DropdownProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }: { children: React.ReactNode }) => {
   const [options, setOptions] = useState<OptionsShape[]>([]);
   const [targetId, setTargetId] = useState<targetProp>(null);
   const [cachedId, setCachedId] = useState<targetProp>(null);

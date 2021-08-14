@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useLayoutEffect, useState } from 'react';
 
 const getDimensions = (element: HTMLElement) => element.getBoundingClientRect();
 
-export function useDimensions(responsive = true) {
+export function useDimensions(
+  responsive = true,
+): [(el: any) => void, DOMRect, HTMLElement] {
   const [dimensions, setDimensions] = useState<DOMRect | null>(null);
   const [element, setElement] = useState<HTMLElement | null>(null);
 
@@ -26,7 +29,11 @@ export function useDimensions(responsive = true) {
         };
       }
     }
-  }, []);
+  }, [element, responsive, hook]);
 
-  return [hook, dimensions, element];
+  return [
+    hook as (el: any) => void,
+    dimensions as DOMRect,
+    element as HTMLElement,
+  ];
 }
