@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  useContext,
+  MouseEvent,
+} from 'react';
 import { motion } from 'framer-motion';
 import { useDimensions } from '../../hooks/useDimensions';
 import { DropdownContext } from './Provider';
@@ -76,8 +82,27 @@ const DropdownOption: React.FC<DropdownOptionsProps> = ({
     backgroundHeight,
   ]);
 
+  const handleOpen = () => setTargetId(id);
+  const handleClose = () => setTargetId(null);
+  const handleTouch = () => (window.isMobile = true);
+  const handleClick = (event: MouseEvent) => {
+    event.preventDefault();
+    const isTargetItemSameId = targetId === id;
+    console.log(isTargetItemSameId);
+    return isTargetItemSameId ? handleOpen() : handleClose();
+  };
+
   return (
-    <motion.button ref={optionHook} className="dropdown-option">
+    <motion.button
+      ref={optionHook}
+      className="dropdown-option"
+      onMouseDown={handleClick}
+      onHoverStart={() => !window.isMobile && handleOpen()}
+      onHoverEnd={() => !window.isMobile && handleClose()}
+      onTouchStart={handleTouch}
+      onFocus={handleOpen}
+      onBlur={handleClose}
+    >
       {name}
     </motion.button>
   );
