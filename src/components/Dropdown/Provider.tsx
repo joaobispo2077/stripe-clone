@@ -20,10 +20,11 @@ export const DropdownContext = React.createContext<OptionsControll>(
 
 export type OptionsShape = {
   id: targetProp;
-  optionDimensions: number;
+  optionDimensions: DOMRect;
   optionCenterX: number;
-  WrappedContent: React.ReactElement;
+  WrappedContent: React.ComponentType;
   backgroundHeight: number;
+  contentDimensions?: DOMRect;
 };
 
 export const DropdownProvider: React.FC<{
