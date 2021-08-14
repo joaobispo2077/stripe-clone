@@ -26,7 +26,7 @@ export type OptionsShape = {
   backgroundHeight: number;
 };
 
-export function DropdownProvider(children: React.ReactNode) {
+export const DropdownProvider: React.FC = (children: React.ReactNode) => {
   const [options, setOptions] = useState<OptionsShape[]>([]);
   const [targetId, setTargetId] = useState<targetProp>(null);
   const [cachedId, setCachedId] = useState<targetProp>(null);
@@ -109,4 +109,4 @@ export function DropdownProvider(children: React.ReactNode) {
       {children}
     </DropdownContext.Provider>
   );
-}
+};
