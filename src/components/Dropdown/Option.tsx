@@ -7,7 +7,7 @@ export type DropdownOptionsProps = {
 };
 
 const DropdownOption: React.FC<DropdownOptionsProps> = ({ name, Content }) => {
-  return <button>{name}</button>;
+  return <button className="dropdown-option">{name}</button>;
 };
 
 export { DropdownOption };

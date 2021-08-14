@@ -8,6 +8,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    min-height: 100%;
+    background: #202020;
+  }
+
+
+  *, button, input {
     border: 0;
     background: none;
     font-family: 'Roboto', --apple-system, system-ui, sans-serif;
