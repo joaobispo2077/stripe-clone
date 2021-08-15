@@ -82,6 +82,8 @@ const DropdownOption: React.FC<DropdownOptionsProps> = ({
     backgroundHeight,
   ]);
 
+  useEffect(() => deleteOptionById(id), [deleteOptionById, id]);
+
   const handleOpen = () => setTargetId(id);
   const handleClose = () => setTargetId(null);
   const handleTouch = () => (window.isMobile = true);

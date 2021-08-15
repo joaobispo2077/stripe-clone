@@ -14,21 +14,21 @@ const NavBar: React.FC = () => {
               <DropdownOption
                 name="Produtos"
                 Content={Products}
-                backgroundHeight={1}
+                backgroundHeight={286}
               />
             </li>
             <li>
               <DropdownOption
                 name="Desenvolvedores"
                 Content={Developers}
-                backgroundHeight={2}
+                backgroundHeight={167}
               />
             </li>
             <li>
               <DropdownOption
                 name="Empresa"
                 Content={Company}
-                backgroundHeight={3}
+                backgroundHeight={215}
               />
             </li>
           </ul>
