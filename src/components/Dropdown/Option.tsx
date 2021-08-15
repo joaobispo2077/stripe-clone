@@ -89,7 +89,7 @@ const DropdownOption: React.FC<DropdownOptionsProps> = ({
     event.preventDefault();
     const isTargetItemSameId = targetId === id;
     console.log(isTargetItemSameId);
-    return isTargetItemSameId ? handleOpen() : handleClose();
+    return isTargetItemSameId ? handleClose() : handleOpen();
   };
 
   return (
