@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { DropdownContext } from './Provider';
 import { DropdownSection } from './Section';
@@ -29,11 +29,26 @@ const DropdownRoot: React.FC = () => {
   const isActive = targetId !== null || hovering;
   const isFirstInteraction = isActive && !hasInteracted;
 
+  /*first interaction*/
   if (isFirstInteraction) {
     setTimeout(() => {
       if (!hasInteracted) setHasInteracted(true);
     }, 15);
   }
+
+  useEffect(() => {
+    if (isActive) return;
+
+    const timeout = setTimeout(
+      () => setHasInteracted(false),
+      0.22 * 1000 * 0.9,
+    );
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isActive]);
+
   return (
     <div style={{ perspective: 2000 }}>
       <motion.div
