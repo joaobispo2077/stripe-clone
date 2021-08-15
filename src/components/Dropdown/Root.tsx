@@ -2,6 +2,7 @@ import React, { useContext, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { DropdownContext } from './Provider';
 import { DropdownSection } from './Section';
+import DropdownArrow from './Arrow';
 
 const DropdownRoot: React.FC = () => {
   const [hovering, setHovering] = useState(false);
@@ -69,6 +70,7 @@ const DropdownRoot: React.FC = () => {
           ))}
         </motion.div>
       </motion.div>
+      <DropdownArrow isFirstInteraction />
     </div>
   );
 };
