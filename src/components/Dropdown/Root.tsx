@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { DropdownContext } from './Provider';
 import { DropdownSection } from './Section';
 import DropdownArrow from './Arrow';
+import DropdownBackground from './Background';
 
 const DropdownRoot: React.FC = () => {
   const [hovering, setHovering] = useState(false);
@@ -77,6 +78,7 @@ const DropdownRoot: React.FC = () => {
           onHoverStart={() => setHovering(true)}
           onHoverEnd={() => setHovering(false)}
         >
+          <DropdownBackground />
           <motion.div
             animate={{
               x: -x,
