@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     min-height: 100%;
-    background: #202020;
+    background: #ddf;
   }
 
 
