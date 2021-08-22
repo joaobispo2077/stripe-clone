@@ -13,9 +13,6 @@
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=not specified&color=53f&labelColor=1C1C1C">
 </p>
 <p align="center">
-<!-- <a href="https://github.com/joaobispo2077" target="_blank">
-    <img alt="Made by João Bispo" src="https://img.shields.io/static/v1?label=Made%20By&message=Joao%20Bispo&color=05d5ff&labelColor=1C1C1C">
-  </a> -->
   <a href="https://github.com/joaobispo2077" target="_blank" >
     <img alt="Github - João Bispo" src="https://img.shields.io/badge/Github--%4B0082?style=plastic&labelColor=1C1C1C&color=05d5ff&logo=github">
   </a>
@@ -28,11 +25,11 @@
 </p>
 
 <p align="center">
-  <a href="#-projeto">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-desafios">Challenges</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#%EF%B8%8F-como-contribuir">How to contribute</a>
+  <a href="#-challenges">Challenges</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="%EF%B8%8F-how-to-contribute">How to contribute</a>
 </p>
 
 <br>
